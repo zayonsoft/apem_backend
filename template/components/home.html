@@ -1,0 +1,30 @@
+{% extends "main/landing.html" %}
+{% block content %}
+<style>
+    div.component-cover {
+        padding: 15px;
+        background-color: whitesmoke;
+        border-radius: 3px;
+        font-family: system-ui;
+    }
+
+    .info-cover {
+        display: grid;
+        gap: 5px;
+        list-style-type: none;
+    }
+</style>
+<div class="component-cover">
+    <ul class="info-cover">
+        <li>
+            <span class="label">Username:</span>
+            <span class="info">{{request.user.username}}</span>
+        </li>
+
+        <li>
+            <span class="label">Email:</span>
+            <span class="info">{{request.user.email}}</span>
+        </li>
+    </ul>
+</div>
+{% endblock %}

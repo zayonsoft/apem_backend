@@ -1,0 +1,127 @@
+<style>
+    div.new-popup-cover {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.6);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .new-popup-form {
+        display: grid;
+        position: absolute;
+        gap: 15px;
+        background-color: whitesmoke;
+        width: 80%;
+        max-width: 300px;
+        box-sizing: border-box;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        font-family: system-ui;
+        padding: 10px;
+        box-shadow: 0px 0px 2px grey;
+    }
+
+    .popup-header {
+        display: grid;
+        position: relative;
+    }
+
+    .title {
+        text-align: center;
+        padding: 10px 3px;
+        font-weight: 600;
+    }
+
+    .popup-closer {
+        position: absolute;
+        right: 3%;
+        padding: 5px;
+        border: none;
+        background-color: transparent;
+        transition: 0.5s ease;
+    }
+
+    .popup-closer:hover {
+        color: red;
+    }
+
+    .inputs-cover {
+        display: grid;
+        gap: 10px;
+    }
+
+    .each-input {
+        display: grid;
+    }
+
+    .each-input label {
+        font-size: 0.9rem;
+    }
+
+    .each-input input {
+        padding: 10px;
+        box-sizing: border-box;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid grey;
+        border-radius: 3px;
+        height: 40px;
+    }
+
+    .submit-btn {
+        background-color: rgb(0, 40, 151);
+        height: 40px;
+        color: whitesmoke;
+        font-family: system-ui;
+        font-weight: 500;
+        border: none;
+        border-radius: 3px;
+        border: 1px solid rgb(0, 40, 151);
+        transition: 0.5s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: rgb(0, 26, 99);
+    }
+
+    button.processing {
+        background: rgb(83, 87, 117);
+    }
+
+    button.processing:hover {
+        background: rgb(83, 87, 117);
+    }
+</style>
+<div style="display: none;" class="new-popup-cover add-popup-cover">
+    <section class="new-popup-form">
+        <div class="popup-header">
+            <span class="title">ADD ACCOUNT</span>
+            <button class="popup-closer close-add-btn">
+                <i class="fa fa-times fa-2x"></i>
+            </button>
+        </div>
+        <form action="{% url 'create_account' %}" class="add-account">
+            {% csrf_token %}
+            <div class="inputs-cover">
+                <div class="each-input">
+                    <label for="add_acc_name">Account Name:</label>
+                    <input name="account_name" id="add_acc_name" type="text" placeholder="Account Name">
+                </div>
+
+                <div class="each-input">
+                    <label for="add_acc_no">Account Number:</label>
+                    <input name="account_number" id="add_acc_no" type="text" placeholder="Account Number">
+                </div>
+
+                <div class="each-input">
+                    <label for="add_bank_name">Bank Name:</label>
+                    <input name="bank_name" id="add_name_name" type="text" placeholder="Bank Name">
+                </div>
+                <button class="submit-btn submit-add" type="submit">Submit</button>
+            </div><!-- div.inputs-cover -->
+        </form>
+    </section><!-- section-popup-form -->
+</div><!-- div.popup-cover -->

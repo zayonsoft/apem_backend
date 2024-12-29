@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANCIENT PATH EVANGELICAL MINISTRY</title>
+    <link rel="shortcut icon" href="{% static 'logo/apem_logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'fonts/all.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/landing_products.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/landing_products_responsive.css' %}">
+</head>
+
+<body>
+    <div class="page-cover sidebar-closed">
+        <nav>
+            <div class="logo-img-cover">
+                <div class="nav-btn-cover">
+                    <button class="nav-btn">
+                        <span class="closed-aside-icon"><i class="fa fa-bars"></i></span>
+                        <span class="opened-aside-icon"><i class="fa fa-times"></i></span>
+
+                    </button>
+                </div><!-- div.nav-bar-btn -->
+                <img class="logo-img" src="{% static 'logo/apem_logo.png' %}" alt="">
+            </div><!--div.logo-img-cover-->
+
+
+
+            <div class="logo">
+                <p class="logo-text"> <span class="username">ADMIN</span> </p>
+            </div><!-- div.logo -->
+        </nav>
+
+
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+
+        <aside class="close-on-click">
+            <div class="aside-content">
+
+                <div class="logo-img-cover">
+                    <img class="logo-img" src="{% static 'logo/apem_logo.png' %}" alt="">
+                </div><!--div.logo-img-cover-->
+
+                <div class="aside-header">
+                    <h2 class="aside-header-text">Quick Links</h2>
+                </div>
+                <ul class="category-list">
+                    <li>
+                        <a class="each-category-link" href="#">
+                            <span class="category-text">Home</span>
+                            <span class="category-icon">
+                                <i class="fa fa-list"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="each-category-link" href="{% url 'sermons' %}">
+                            <span class="category-text">Sermons</span>
+                            <span class="category-icon">
+                                <i class="fa fa-book-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="each-category-link" href="{% url 'accounts' %}">
+                            <span class="category-text">Accounts</span>
+                            <span class="category-icon">
+                                <i class="fa fa-list"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="each-category-link" href="#">
+                            <span class="category-text">Logout</span>
+                            <span class="category-icon">
+                                <i class="fa fa-arrow-right-from-bracket"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <!-- end -->
+
+                </ul>
+
+            </div><!-- div.aside-content -->
+        </aside>
+
+        <footer>
+            <p class="footer-text">&copy; APEM DEV TEAM 2024</p>
+        </footer>
+    </div><!-- div.page-cover -->
+
+    <script src="{% static 'staff/nav_script.js' %}"></script>
+    <script src="{% static 'jquery.js' %}"></script>
+</body>
+
+</html>

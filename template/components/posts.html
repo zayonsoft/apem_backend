@@ -1,0 +1,220 @@
+{% extends "main/landing.html" %}
+{% load static %}
+{% block content %}
+<style>
+    div.component-cover {
+        display: grid;
+        gap: 20px;
+        padding: 15px;
+        font-family: system-ui;
+    }
+
+    .component-header {
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .posts-cover {
+        display: grid;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .preloader-cover img {
+        display: block;
+        margin: auto;
+    }
+
+    .each-post {
+        box-sizing: border-box;
+        padding: 15px;
+        display: grid;
+        gap: 10px;
+        border-radius: 2px;
+        max-width: 500px;
+        margin: auto;
+        background-color: #ececec;
+        width: 80%;
+    }
+
+    .each-post .bigger {
+        color: black;
+    }
+
+    .each-post .title {
+        text-align: left;
+        color: #252525;
+    }
+
+    .view-btn {
+        background-color: rgb(56, 56, 56);
+        color: whitesmoke;
+        display: block;
+        font-family: system-ui;
+        padding: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: 0.5s ease;
+        border-radius: 2px;
+        font-size: 0.9rem;
+    }
+
+    .view-btn:hover {
+        background-color: rgb(80, 80, 80);
+    }
+
+    .crud {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 3px;
+    }
+
+    .crud a {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .edit-btn {
+        background-color: rgb(0, 59, 223);
+        color: whitesmoke;
+        font-family: system-ui;
+        padding: 5px;
+        transition: 0.5s ease;
+        font-size: 0.9rem;
+    }
+
+    .edit-btn:hover {
+        background-color: rgb(0, 45, 168);
+    }
+
+    .delete-btn {
+        background-color: rgb(133, 0, 0);
+        color: whitesmoke;
+        font-family: system-ui;
+        padding: 5px;
+        transition: 0.5s ease;
+        font-size: 0.9rem;
+    }
+
+    .delete-btn:hover {
+        background-color: rgb(199, 0, 0);
+    }
+
+    .line {
+        width: 100%;
+        max-width: 550px;
+        background-color: #666666;
+        height: 1px;
+    }
+
+    div.new-btn {
+        width: 90%;
+        max-width: 550px;
+        margin: auto;
+        /* display: grid; */
+    }
+
+    .new-btn button {
+        border: none;
+        padding: 7px;
+        background-color: rgb(0, 43, 160);
+        color: whitesmoke;
+        transition: 0.5s ease;
+        display: block;
+        justify-self: center;
+        height: 35px;
+        padding: 10px;
+        border-radius: 35px;
+    }
+
+    .new-btn button:hover {
+        background-color: rgb(0, 26, 99);
+    }
+
+    div.component-search {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(0, 33, 105);
+        padding: 5px 10px;
+        gap: 3px;
+        border-radius: 35px;
+        background-color: whitesmoke;
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .search-input {
+        flex: 1;
+    }
+
+    .component-search .icon {
+        color: rgb(0, 33, 105);
+    }
+
+    .search-input input {
+        padding: 6px;
+        background: transparent;
+        border: none;
+        width: 100%;
+        outline: none;
+    }
+</style>
+<div class="component-cover">
+    <h2 class="component-header">Posted Sermons</h2>
+    <div class="component-search-cover">
+        <div class="component-search">
+            <span class="icon">
+                <label for="search-input">
+                    <i class="fa fa-search"></i>
+                </label>
+            </span>
+            <span class="search-input"> <input type="search" name="search_value" id="search-input" placeholder="Search">
+            </span>
+        </div>
+    </div>
+
+    <input type="hidden" name="get_sermon_url" value="{% url 'get_sermons' %}">
+    <input name="preloader" type="hidden" value="{% static 'preloaders/rhombus.gif' %}">
+
+    <input type="hidden" name="create_sermon_url" value="{% url 'create_sermon' %}">
+    <input type="hidden" name="edit_sermon_url" value="{% url 'edit_sermon' %}">
+
+
+    <div class="new-btn">
+        <button class="add-sermon-btn">Add New <i class="fa fa-plus"></i> </button>
+    </div><!-- div.new-btn -->
+
+    <div class="posts-cover">
+
+        <div class="preloader-cover">
+            <img src="{% static 'preloaders/rhombus.gif' %}" alt="">
+        </div>
+
+    </div><!-- div.posts-cover -->
+</div><!-- div.component-cover -->
+
+
+<form action="{% url 'delete_sermon' %}" class="delete-sermon-form">
+    {% csrf_token %}
+    <input type="hidden" name="sermon_pk" value="">
+    <input type="hidden" name="title" value="">
+
+</form>
+
+{% include 'popups/error_message.html' %}
+{% include 'popups/success_message.html' %}
+{% include 'popups/confirmation_dialog.html' %}
+
+
+{% include 'popups/add_sermon.html' %}
+{% include 'popups/edit_sermon.html' %}
+{% include 'popups/preloader.html' %}
+
+<script src="{% static 'error_specification.js' %}" defer></script>
+
+<script src="{% static 'components/sermons/get_sermons.js' %}"></script>
+<script src="{% static 'components/sermons/add_sermon.js' %}"></script>
+<script src="{% static 'components/sermons/edit_sermon.js' %}"></script>
+<script src="{% static 'components/sermons/delete_sermon.js' %}"></script>
+
+{% endblock %}

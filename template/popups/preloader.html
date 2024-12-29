@@ -1,0 +1,42 @@
+{% load static %}
+<style>
+    section.preloader-overlay {
+        background: linear-gradient(rgba(44, 58, 66, 0.7), rgba(44, 58, 66, 0.7));
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .preloder-img-cover {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background-color: transparent;
+    }
+
+    .preloder-img-cover img {
+        width: 100px;
+
+    }
+</style>
+
+<section style="display: none;" class="preloader-overlay">
+    <div class="preloder-img-cover">
+        <img src="{% static 'preloaders/rhombus.gif' %}" alt="">
+    </div>
+</section><!-- section.popup-overlay -->
+
+<script>
+    function showPreloader() {
+        let preloaderSection = document.querySelector("section.preloader-overlay");
+        preloaderSection.style.display = "block";
+    }
+
+    function hidePreloader() {
+        let preloaderSection = document.querySelector("section.preloader-overlay");
+        preloaderSection.style.display = "none";
+    }
+</script>

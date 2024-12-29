@@ -1,0 +1,147 @@
+{% load static %}
+
+<style>
+    div.message-overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 500;
+    }
+
+    section.message-container {
+        padding: 15px 10px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        background-color: rgb(228, 228, 228);
+        width: 90%;
+        max-width: 260px;
+        display: grid;
+        gap: 10px;
+        font-family: system-ui;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+
+    .message-img-cover {
+        min-height: 130px;
+        display: grid;
+        align-content: center;
+    }
+
+    .message-image {
+        width: 75px;
+        max-width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    div.message-cover {
+        display: grid;
+        gap: 5px;
+    }
+
+    .message-header {
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+    }
+
+    .success-message-container .message-header {
+        color: green;
+    }
+
+    .error-message-container .message-header {
+        color: red;
+    }
+
+    .message-text {
+        color: black;
+        text-align: center;
+        padding: 5px 10px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    div.message-closer-cover {
+        display: grid;
+        min-height: 75px;
+        align-content: center;
+    }
+
+    .message-closer {
+        font-family: system-ui;
+        border: none;
+        border-radius: 25px;
+        height: 42px;
+        color: whitesmoke;
+        font-weight: 450;
+        font-size: 1rem;
+        transition: 0.5s ease;
+        width: 90%;
+        margin: auto;
+    }
+
+    .message-closer:hover {
+        opacity: 0.8;
+    }
+
+    .error-message-container .message-closer {
+        background-color: red;
+    }
+
+    .success-message-container .message-closer {
+        background-color: green;
+    }
+</style>
+
+<div class="message-overlay error-message-overlay" style="display: none;">
+
+    <section class="message-container  error-message-container">
+        <div class="message-img-cover">
+            <!-- <img class="message-image" src="../images/icons/success_green_check.png" alt=""> -->
+            <img class="message-image" src="{% static 'images/icons/error_circle_1.png' %}" alt="">
+        </div><!-- div.message-img-cover -->
+        <div class="message-cover">
+            <h2 class="message-header">ERROR!</h2>
+            <p class="message-text">Something Went Wrong! Try Again Later</p>
+        </div><!-- div.message-cover -->
+
+        <div class="message-closer-cover">
+            <button class="message-closer">CLOSE</button>
+        </div>
+
+    </section><!-- section.message-container -->
+
+</div><!-- div.message-overlay -->
+
+
+<script>
+    function hideErrorMessage() {
+        let errorMessageOverlay = document.querySelector("div.error-message-overlay");
+        errorMessageOverlay.style.display = "none";
+    }
+    function showErrorMessage(error_text) {
+        let errorMessageOverlay = document.querySelector("div.error-message-overlay");
+        let errorP = errorMessageOverlay.querySelector("p.message-text");
+        errorP.innerHTML = `${error_text}`;
+        errorMessageOverlay.style.display = "block";
+    }
+
+    function activateErrorCloser() {
+        let errorMessageOverlay = document.querySelector("div.error-message-overlay");
+        let closerBtn = errorMessageOverlay.querySelector("button.message-closer");
+        closerBtn.addEventListener("click", () => {
+            hideErrorMessage();
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        activateErrorCloser();
+    });
+
+</script>

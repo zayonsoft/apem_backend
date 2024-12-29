@@ -1,0 +1,174 @@
+{% extends "main/landing.html" %}
+{% load static %}
+{% block content %}
+<style>
+    div.component-cover {
+        display: grid;
+        gap: 20px;
+        padding: 15px;
+        font-family: system-ui;
+    }
+
+    .component-header {
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .posts-cover {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+        gap: 15px;
+        width: 90%;
+        max-width: 650px;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .preloader-cover img {
+        display: block;
+        margin: auto;
+    }
+
+    .each-post {
+        box-sizing: border-box;
+        padding: 10px;
+        display: grid;
+        gap: 10px;
+        box-shadow: 0px 0px 2px rgb(90, 90, 90);
+        border-radius: 2px;
+        background: whitesmoke;
+    }
+
+
+    .details-cover {
+        display: grid;
+        gap: 8px;
+    }
+
+    .title {
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+    .view-btn {
+        background-color: rgb(56, 56, 56);
+        color: whitesmoke;
+        display: block;
+        font-family: system-ui;
+        padding: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: 0.5s ease;
+        border-radius: 2px;
+        font-size: 0.9rem;
+    }
+
+    .view-btn:hover {
+        background-color: rgb(80, 80, 80);
+    }
+
+    .crud {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        align-content: center;
+    }
+
+    .crud a {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .edit-btn {
+        background-color: rgb(0, 59, 223);
+        color: whitesmoke;
+        font-family: system-ui;
+        padding: 5px;
+        transition: 0.5s ease;
+        font-size: 0.9rem;
+    }
+
+    .edit-btn:hover {
+        background-color: rgb(0, 45, 168);
+    }
+
+    .delete-btn {
+        background-color: rgb(133, 0, 0);
+        color: whitesmoke;
+        font-family: system-ui;
+        padding: 5px;
+        transition: 0.5s ease;
+        font-size: 0.9rem;
+    }
+
+    .delete-btn:hover {
+        background-color: rgb(199, 0, 0);
+    }
+
+    div.new-btn {
+        width: 90%;
+        max-width: 550px;
+        margin: auto;
+        /* display: grid; */
+    }
+
+    .new-btn button {
+        border: none;
+        padding: 7px;
+        background-color: rgb(0, 43, 160);
+        color: whitesmoke;
+        transition: 0.5s ease;
+        display: block;
+        justify-self: center;
+        height: 35px;
+        padding: 10px;
+        border-radius: 35px;
+    }
+
+    .new-btn button:hover {
+        background-color: rgb(0, 26, 99);
+    }
+</style>
+<div class="component-cover">
+    <input name="get_account_url" type="hidden" value="{% url 'get_accounts' %}">
+    <input name="preloader" type="hidden" value="{% static 'preloaders/rhombus.gif' %}">
+    {% csrf_token %}
+
+    <h2 class="component-header">Accounts</h2>
+    <small style="text-align: center;">Accounts Here and Details Will be displayed on the Website</small>
+
+    <div class="new-btn">
+        <button class="add-acc-btn">Add New <i class="fa fa-plus"></i> </button>
+    </div><!-- div.new-btn -->
+
+    <div class="posts-cover">
+
+        <div class="preloader-cover">
+            <img src="{% static 'preloaders/rhombus.gif' %}" alt="">
+        </div>
+
+    </div><!-- div.posts-cover -->
+</div><!-- div.component-cover -->
+
+
+<form action="{% url 'delete_account' %}" class="delete-account">
+    {% csrf_token %}
+    <input type="hidden" name="account_pk" value="">
+    <input type="hidden" name="account_number" value="">
+</form>
+
+{% include 'popups/error_message.html' %}
+{% include 'popups/success_message.html' %}
+{% include 'popups/confirmation_dialog.html' %}
+
+{% include 'popups/add_account.html' %}
+{% include 'popups/edit_account.html' %}
+{% include 'popups/preloader.html' %}
+
+<script src="{% static 'error_specification.js' %}" defer></script>
+
+<script src="{% static 'components/accounts/get_accounts.js' %}"></script>
+<script src="{% static 'components/accounts/add_account.js' %}"></script>
+<script src="{% static 'components/accounts/edit_account.js' %}"></script>
+<script src="{% static 'components/accounts/delete_account.js' %}"></script>
+{% endblock %}

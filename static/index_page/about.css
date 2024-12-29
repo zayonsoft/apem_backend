@@ -1,0 +1,230 @@
+section.about {
+    min-height: 20vh;
+    padding: 15px 10px;
+    background-color: #e1e1e1;
+    display: grid;
+    gap: 6px;
+    align-content: flex-start;
+    font-family: system-ui;
+    position: relative;
+}
+
+div.mision-vision-cover {
+    display: grid;
+    gap: 15px;
+}
+
+div.vision-cover {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    max-width: 850px;
+    gap: 2px;
+    grid-template-areas:
+        "vision-header vision-header"
+        "vision-image vision-text"
+    ;
+
+    position: relative;
+    z-index: 1;
+}
+
+.mini-header {
+    background-color: #343869;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.vision-cover .mini-header {
+    grid-area: vision-header;
+}
+
+div.vision-image {
+    display: grid;
+    grid-area: vision-image;
+}
+
+.vision-img {
+    display: block;
+    justify-self: right;
+    padding: 10px;
+}
+
+.vision-text-cover {
+    display: grid;
+    align-content: start;
+    gap: 3px;
+    padding: 15px;
+    box-shadow: -0px 0px 2px rgb(114, 42, 42);
+    border-radius: 2px;
+    grid-area: vision-text;
+}
+
+.mision-vision-header {
+    color: #7a0808;
+}
+
+.vision-mision-text {
+    max-width: 450px;
+    text-align: justify;
+    color: #1c2235;
+}
+
+div.mission-cover {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    max-width: 850px;
+    gap: 2px;
+    grid-template-areas:
+        "mission-header mission-header"
+        " mission-text mission-image"
+    ;
+
+    position: relative;
+    z-index: 1;
+}
+
+.mission-cover .mini-header {
+    grid-area: mission-header;
+}
+
+div.mission-image {
+    display: grid;
+    grid-area: mission-image;
+}
+
+.mission-img {
+    display: block;
+    justify-self: left;
+    max-height: 300px;
+    object-fit: cover;
+    padding: 5px;
+}
+
+.mission-text-cover {
+    display: grid;
+    align-content: start;
+    gap: 3px;
+    padding: 15px;
+    box-shadow: 0px 0px 2px rgb(114, 42, 42);
+    border-radius: 2px;
+    grid-area: mission-text;
+}
+
+div.church-bg1 {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    width: 150px;
+    left: 0%;
+    background: url(../icons/church_red.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 0.12;
+}
+
+div.church-bg2 {
+    position: absolute;
+    top: 0;
+    height: 150px;
+    width: 150px;
+    right: 0%;
+    background: url(../icons/church_red.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 0.12;
+}
+
+div.bible-bg1 {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    height: 150px;
+    width: 150px;
+    background: url(../icons/bible_1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 0.05;
+}
+
+div.bible-bg2 {
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    height: 150px;
+    width: 150px;
+    background: url(../icons/bible_1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 0.05;
+}
+
+@media screen and (max-width:600px) {
+    div.church-bg1 {
+        opacity: 0.05;
+    }
+
+    div.church-bg2 {
+        opacity: 0.05;
+    }
+
+    div.bible-bg1 {
+        opacity: 0.05;
+    }
+
+    div.bible-bg2 {
+        opacity: 0.05;
+    }
+
+    section.about {
+        gap: 10px;
+    }
+
+    div.vision-cover {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "vision-header"
+            "vision-image"
+            "vision-text"
+        ;
+    }
+
+    .vision-img {
+        display: block;
+        justify-self: center;
+        padding: 10px;
+    }
+
+    .medium-img {
+        max-width: 300px;
+    }
+
+    .vision-text-cover {
+        box-shadow: 0px 0px 2px grey;
+    }
+
+    div.mission-cover {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "mission-header"
+            "mission-image"
+            "mission-text"
+        ;
+    }
+
+    .mission-img {
+        justify-self: center;
+        padding: 10px;
+    }
+
+    .mission-text-cover {
+        box-shadow: 0px 0px 2px grey
+    }
+}

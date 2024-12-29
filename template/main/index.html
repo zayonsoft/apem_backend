@@ -1,0 +1,702 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANCIENT PATH EVANGELICAL MINISTRY</title>
+    <link rel="shortcut icon" href="{% static 'logo/apem_logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'index_page/index.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/landing.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/landing_responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/about.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/services.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/media_center.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/sermon.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/contact_us.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/light.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/donation.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/footer_section.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/all.css' %}">
+    <style>
+        .preloader-cover {
+            margin: auto;
+        }
+
+        .styled-preloader {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 10px solid rgba(0, 0, 0, 0.1);
+            border-top: 10px solid rgb(13, 23, 68);
+            animation: spin 1s linear infinite;
+            display: block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overall">
+        <section class="landing">
+            <header class="closed-nav">
+                <div class="logo">
+                    <img class="logo-img" src="{% static 'logo/apem_logo.png' %}" alt="">
+                </div>
+                <div class="nav-links-cover">
+                    <div class="nav-links-container">
+                        <a data-location="landing" href="" class="scroll-link nav-links">Home</a>
+                        <a data-location="about" href="" class="scroll-link nav-links">About</a>
+                        <a data-location="services" href="" class="scroll-link nav-links">Weekly Services</a>
+                        <a data-location="sermons" href="" class="scroll-link nav-links">Sermons</a>
+                        <a data-location="media-center" href="" class="scroll-link nav-links">Media Center</a>
+                        <a data-location="contact" href="" class="scroll-link nav-links">Contact Us</a>
+                        <a data-location="donate" href="" class="scroll-link nav-links">Donate</a>
+                    </div><!-- div.nav-links-container -->
+                </div>
+                <div class="nav-btn-cover">
+                    <button class="nav-btn">
+                        <span class="closed-bar">
+                            <i class="fas fa-bars fa-1x"></i>
+                        </span>
+                        <span class="opened-bar">
+                            <i class="fa fa-times"></i>
+                        </span>
+                    </button>
+                </div><!-- div.nav-btn -->
+            </header>
+
+            <div class="home-content-cover">
+                <p class="welcome">Welcome to</p>
+                <h1 class="welcome-text">ancient path<br />evangelical ministry</h1>
+                <h3 class="sub-welcome">We're so glad you're here!</h3>
+            </div><!-- div.home-content-cover -->
+        </section><!-- section.landing -->
+
+        <section class="about">
+            <div class="header-box">
+                <h2 class="section-header">
+                    <!-- <span class="icon">
+                        <i class="fa fa-info-circle fa-2x"></i>
+                    </span> -->
+                    <span class="header-text">About US</span>
+
+                </h2>
+            </div><!-- div.header-box -->
+
+            <!-- <hr class="line"> -->
+            <p class="sub-content">We follow the path of christ in leading the soul of people around the world to
+                eternal life by God the Almighty!
+            </p>
+
+            <div class="mision-vision-cover">
+                <!-- Visison -->
+                <div class="vision-cover">
+                    <h3 class="mini-header">Vision</h3>
+                    <div class="vision-image">
+                        <img class="medium-img vision-img" src="{% static 'images/vision_zoom.png' %}" alt="">
+                    </div><!-- div.vision-image -->
+                    <div class="vision-text-cover">
+                        <h3 class="mision-vision-header">Vision Statement:</h3>
+                        <p class="vision-mision-text">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora quas, aperiam natus
+                            repellendus nobis quisquam. Dolor asperiores deleniti nihil similique! Ut dolorum nesciunt
+                            in
+                            maiores!
+                        </p>
+                    </div><!-- div.vision-text-cover -->
+                </div><!-- div.vision-cover -->
+
+                <!-- MISION  -->
+                <div class="mission-cover">
+                    <h3 class="mini-header">Mission</h3>
+                    <div class="mission-image">
+                        <img class="medium-img mission-img" src="{% static 'images/target_dart.png' %}" alt="">
+                    </div><!-- div.vision-image -->
+
+                    <div class="mission-text-cover">
+                        <h3 class="mision-vision-header">Mission Statement:</h3>
+                        <p class="vision-mision-text">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora quas, aperiam natus
+                            repellendus nobis quisquam. Dolor asperiores deleniti nihil similique! Ut dolorum nesciunt
+                            in
+                            maiores!
+                        </p>
+                    </div><!-- div.vision-text-cover -->
+
+                </div><!-- div.mission-cover -->
+
+            </div><!-- div.misison-vision-cover -->
+
+            <div class="church-bg1"></div>
+            <div class="church-bg2"></div>
+            <div class="bible-bg1"></div>
+            <div class="bible-bg2"></div>
+        </section><!-- section.about -->
+
+        <!-- NEW SECCCCCCCCTTTTTTTTTTIIIIIIOOOOOOON! -->
+
+        <section class="services">
+            <div class="left-service">
+                <div class="sub-section">
+                    <h2 class="service-header">Join Us As We Worship and Fellowship</h2>
+                    <p class="service-sub-header-text">
+                        We invite you to be part of our weekly services, where faith and fellowship come together,
+                        whether you are a lifelong believer or exploring your faith, Our doors are open to you.
+                    </p>
+                </div><!-- div.sub-section -->
+
+                <div class="sub-section">
+                    <h2 class="service-header">Come Together, Experience His Presence</h2>
+                    <p class="service-sub-header-text ">
+                        <span class="bigger-para">
+                            For where two or three gather in my
+                            name, there am I with them.
+                        </span><br />
+                        <span class="emphasize"> - Matthew 18:20 </span>
+                    </p>
+                    <p class="service-sub-header-text">
+                        At <span class="emphasize">ANCIENT PATH EVANGELICAL MINISTRY</span>, we believe in the power of
+                        coming together to worship,
+                        pray, and experience the presence of God. Whether you're seeking spiritual growth, a sense of
+                        community, or simply a place to belong, we welcome you with open hearts.
+
+                    </p>
+                </div><!-- div.sub-section -->
+
+            </div><!-- div.left-service -->
+
+            <div class="right-service">
+                <div class="sub-section">
+                    <h2 class="service-header">Weekly Services</h2>
+                    <div class="services-container">
+                        <article class="each-service">
+                            <h2 class="service-name">Sunday Service</h2>
+                            <div class="service-desc">
+                                <p class="each-desc">
+                                    <span class="detail-icon"><i class="fa fa-clock"></i>
+                                    </span>
+                                    8:00 am - 11:00 am
+                                </p>
+                                <p class="each-desc">
+                                    <span class="detail-icon"><i class="fa fa-calendar-day"></i>
+                                    </span>
+                                    Sunday
+                                </p>
+                            </div><!-- div.service-desc -->
+                        </article>
+
+
+                        <article class="each-service">
+                            <h2 class="service-name">Bible Study</h2>
+                            <div class="service-desc">
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-clock"></i>
+                                    </span>
+                                    5:00 pm - 7:00 pm
+                                </p>
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-calendar-day"></i>
+                                    </span> Tuesday
+                                </p>
+                            </div><!-- div.service-desc -->
+                        </article>
+
+
+                        <article class="each-service">
+                            <h2 class="service-name">Prayer Meeting</h2>
+                            <div class="service-desc">
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-clock"></i>
+                                    </span>
+                                    5:00 pm - 6:00 pm
+                                </p>
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-calendar-day"></i>
+                                    </span> Thursday
+                                </p>
+                            </div><!-- div.service-desc -->
+                        </article>
+
+                    </div><!-- div.services-container -->
+                </div><!-- div.sub-section -->
+
+                <div class="sub-section">
+                    <h3 class="service-header">Monthly Service</h3>
+                    <div class="services-container">
+
+                        <article class="each-service">
+                            <h2 class="service-name">New Dawn</h2>
+                            <div class="service-desc">
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-clock"></i>
+                                    </span>
+                                    7:00 am - 9:00am
+                                </p>
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-calendar-day"></i>
+                                    </span> Every First Day of the Month
+                                </p>
+                            </div><!-- div.service-desc -->
+                        </article>
+
+                        <article class="each-service">
+                            <h2 class="service-name">Thanksgiving Service</h2>
+                            <div class="service-desc">
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-clock"></i>
+                                    </span>
+                                    8:00 am - 11:00am
+                                </p>
+                                <p class="each-desc">
+                                    <span class="detail-icon">
+                                        <i class="fa fa-calendar-day"></i>
+                                    </span> First Sunday of Every Month
+                                </p>
+                            </div><!-- div.service-desc -->
+                        </article>
+
+                    </div><!-- div.services-container -->
+                </div><!-- div.sub-section -->
+
+            </div><!-- div.right-service -->
+
+        </section><!-- section.services -->
+
+        <section class="media-center">
+            <div class="header-box">
+                <h2 class="section-header">
+                    <span class="header-text">Media Center</span>
+                </h2>
+            </div><!-- div.header-box -->
+
+            <div class="media-cover-container">
+                <div class="media-cover">
+                    <article class="each-picture">
+                        <div class="media-image-cover">
+                            <img src="{% static 'background/cross_bg1.jpg' %}" alt="" class="media-img">
+                        </div>
+                    </article>
+                    <article class="each-picture">
+                        <div class="media-image-cover">
+                            <img src="{% static 'media_center/hands_raised1.jpg' %}" alt="" class="media-img">
+                        </div>
+                    </article>
+                    <article class="each-picture">
+                        <div class="media-image-cover">
+                            <img src="{% static 'background/cross_bg1.jpg' %}" alt="" class="media-img">
+                        </div>
+                    </article>
+                </div><!-- div.media-cover -->
+                <a href="#" class="view-more-btn">View More</a>
+            </div><!-- div.media-cover-container -->
+
+        </section> <!-- section.media-center -->
+
+        <section class="sermons">
+            <div class="header-box">
+                <input type="hidden" name="get_sermon_url" value="{% url 'get_sermons' %}">
+                <input type="hidden" name="sermon_img_url" value="{% static 'background/bible_open.jpg' %}">
+                <h2 class="section-header">
+                    <span class="header-text">SERMONS</span>
+                </h2>
+            </div><!-- div.header-box -->
+
+            <div class="blog-news-cover">
+                <div class="preloader-cover">
+                    <span class="styled-preloader"></span>
+                </div>
+
+            </div><!-- div.blog-news-cover -->
+
+            <a class="more-sermons" href="#"> More </a>
+
+        </section>
+
+        <section class="light">
+            <div class="light-text-cover">
+                <h2 class="light-text">Thy word is a lamp unto my feet, and a light unto my path.</h2>
+                <p class="bible-reference">-Psalm 119: 105(KJV)</p>
+            </div><!-- div.light-text-cover -->
+        </section><!-- section.light -->
+
+        <section class="contact">
+            <div class="contact-details">
+                <div class="contact-us-header-cover">
+                    <div class="mini-header2">
+                        <p>Contact Us</p>
+                    </div><!-- div.mini-header -->
+                    <div class="main-header">
+                        <h1 class="main-header-text">GET IN TOUCH NOW</h1>
+                    </div><!-- div.main-header -->
+                </div><!-- div.contact-us-header-cover -->
+
+                <p class="mini-paragraph">
+                    Do you have any questions you'll like to ask us or do Lorem ipsum dolor sit amet.
+                </p>
+                <div class="contact-info">
+                    <p class="info-title">PHONE</p>
+                    <ul class="phone-number-list">
+                        <li>+234 810 000 0000</li>
+
+                    </ul> <!-- ul.phone-number-list -->
+                </div><!-- div.contact-info -->
+
+                <div class="contact-info">
+                    <p class="info-title">EMAIL</p>
+                    <p class="contact-detail">ancientpathminisistry@gmail.com</p>
+                </div><!-- div.contact-info -->
+
+
+
+                <div class="contact-info">
+                    <p class="info-title">ADDRESS</p>
+                    <p class="contact-detail">Lorem ipsum dolor sit amet consectetur, Akungba-Akoko, Ondo State,
+                        Nigeria.
+                    </p>
+                </div><!-- div.contact-info -->
+
+                <div class="contact-info">
+                    <p class="info-title">Social Media</p>
+                    <div class="contact-detail flex-content">
+                        <li>
+                            <a class="social-link color-blue" href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-black" href="#"> <i class="fa-brands fa-x-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-red" href="#"> <i class="fa-brands fa-youtube"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-purple" href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-red" href="#"> <i class="far fa-envelope"></i> </a>
+                        </li>
+                    </div>
+                </div><!-- div.contact-info -->
+            </div><!-- div.contact-details -->
+
+
+            <div class="contact-form-cover">
+                <form action="" class="contact-form">
+                    <div class="contact-input-cover">
+                        <input name="name" type="text" placeholder="Your Name">
+                    </div><!-- div.contact-input-cover -->
+
+                    <div class="contact-input-cover">
+                        <input name="phone-number" type="text" placeholder="Phone Number">
+                    </div><!-- div.contact-input-cover -->
+
+                    <div class="contact-input-cover">
+                        <input name="email" type="text" placeholder="Your Email">
+                    </div><!-- div.contact-input-cover -->
+
+                    <div class="contact-input-cover">
+                        <textarea name="message" id="" placeholder="Your Message"></textarea>
+                    </div><!-- div.contact-input-cover -->
+
+                    <div class="contact-input-cover">
+                        <button type="button" class="submit-contact-form-btn" type="submit">SEND MESSAGE</button>
+                    </div><!-- div.contact-input-cover -->
+
+                </form><!-- form.contact-form -->
+            </div><!-- div.contact-form -->
+        </section><!-- section.contact -->
+
+        <!-- NEEEEEEEEEEEEW SECTION -->
+        <section class="donate">
+            <div class="left-donation">
+
+                <div class="sub-section">
+                    <h2 class="donation-header">Support Our Ministry</h2>
+                    <p class="sub-header-text">
+                        Your generous donations help us continue our mission of sharing God's love, serving the
+                        community,
+                        and spreading the Gospel. Every contributuion, no matter the size, makes a difference.
+                    </p>
+                </div><!-- div.sub-section -->
+
+                <div class="sub-section">
+                    <h2 class="donation-header">Why Your Support Matters</h2>
+                    <ul class="support-reason-list">
+                        <li>
+                            <span class="icon-and-header">
+                                <span class="list-icon">
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+
+                            </span>
+
+                            <span class="list-content">
+                                <span class="list-bold">
+                                    Community Outreach:
+                                </span>
+                                Provide meals, clothing, and support for those in need.
+
+                            </span>
+                        </li>
+
+
+                        <li>
+                            <span class="icon-and-header">
+                                <span class="list-icon">
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+                            </span>
+
+                            <span class="list-content">
+                                <span class="list-bold">
+                                    Ministry Programs:
+                                </span>
+                                Fund youth programs, Bible studies, and worship services.
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="icon-and-header">
+                                <span class="list-icon">
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+                            </span>
+
+                            <span class="list-content">
+                                <span class="list-bold">
+                                    Church Maintenance:
+                                </span>
+                                Help keep our facilities welcoming and accessible.
+
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="icon-and-header">
+                                <span class="list-icon">
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+                            </span>
+
+                            <span class="list-content">
+                                <span class="list-bold">
+                                    Missions:
+                                </span>
+                                Support our efforts to spread hope locally and globally.
+                            </span>
+                        </li>
+
+
+                    </ul><!-- support-reason-list -->
+                </div><!-- div.sub-section -->
+
+                <div class="sub-section">
+                    <h2 class="donation-header">Ways to Give</h2>
+
+                    <ul class="giving-ways-list">
+                        <li>
+                            <div>
+                                <span class="giving-way-number">
+                                    <span>1</span>
+                                </span>
+                            </div>
+                            <span class="giving-way-item">
+                                <span class="item-header">
+                                    In-Person Giving
+                                </span>
+                                <span class="item-content">
+                                    Place your gift in the offering plate during services or visit the church office.
+                                </span>
+                            </span>
+                        </li>
+
+                        <li>
+                            <div>
+                                <span class="giving-way-number">
+                                    <span>2</span>
+                                </span>
+                            </div>
+                            <span class="giving-way-item">
+                                <span class="item-header">
+                                    Online Giving
+                                </span>
+                                <span class="item-content">
+                                    Give securely through our online platform by clicking the button below:
+                                </span>
+                                <span class="give-btn-cover">
+                                    <button type="button" class="give-btn"> Give Now <i class="fa fa-heart"></i>
+                                    </button>
+                                </span>
+                            </span>
+                        </li>
+                    </ul><!-- ul.giving-ways-list -->
+
+
+                </div><!-- div.sub-section -->
+
+                <section class="give-overlay close-click" style="display: none;">
+                    <input type="hidden" name="get_account_url" value="{% url 'get_accounts' %}">
+
+                    <div class="give-content">
+                        <div class="give-header-cover">
+                            <h3 class="give-header">Donate By Transfering to Any of the Accounts Below:</h3>
+
+                            <div class="give-overlay-head">
+                                <button title="Close" type="button" class="close-giving">
+                                    <i class="fa fa-times fa-2x "></i>
+                                </button>
+                            </div>
+
+                        </div> <!-- div.give-header-cover -->
+
+                        <div class="accounts-cover">
+                            <div class="preloader-cover">
+                                <span class="styled-preloader"></span>
+                            </div>
+
+                        </div><!-- div.accounts-cover -->
+
+
+                    </div><!-- div.give-content -->
+
+                </section><!-- section.give-overlay -->
+
+            </div><!-- div.left-donation-->
+
+            <div class="right-donation">
+                <div class="donation-img-cover">
+                    <img src="{% static 'images/tithe_2.svg' %}" alt="" class="donation-img">
+                </div>
+            </div><!-- div.right-donation -->
+
+        </section>
+
+        <section class="footer">
+            <div class="left-footer">
+                <div class="footer-image">
+                    <img src="{% static 'logo/apem_logo.png' %}" alt="">
+                </div><!-- div.footer-image -->
+                <div class="footer-text">
+                    <p class="mini-paragraph">
+                        Walking in the timeless truth of God's words
+                    </p>
+                </div><!-- div.footer-text -->
+
+                <div class="footer-social-icons">
+                    <ul class="social-icons-cover">
+                        <li>
+                            <a class="social-link color-blue" href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-black" href="#"> <i class="fa-brands fa-x-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-red" href="#"> <i class="fa-brands fa-youtube"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-purple" href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                        </li>
+                        <li>
+                            <a class="social-link color-red" href="#"> <i class="far fa-envelope"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- div.left-footer -->
+
+            <div class="right-footer">
+                <div class="useful-links">
+                    <h3 class="footer-min-header">Useful Links</h3>
+                    <ul class="footer-links-cover">
+                        <li>
+                            <a data-location="landing" href="" class="scroll-link">Home</a>
+                        </li>
+                        <li>
+                            <a data-location="about" href="" class="scroll-link">About</a>
+                        </li>
+                        <li>
+                            <a data-location="services" href="" class="scroll-link">Weekly Services</a>
+                        </li>
+                        <li>
+                            <a data-location="media-center" href="" class="scroll-link">Media Center</a>
+                        </li>
+                        <li>
+                            <a data-location="contact" href="" class="scroll-link">Contact Us</a>
+                        </li>
+                        <li>
+                            <a data-location="donate" href="" class="scroll-link">Donate</a>
+                        </li>
+
+                    </ul><!-- ul.footer-links-cover -->
+                </div><!-- div.useful-links -->
+
+                <div class="news-letter">
+                    <h3 class="footer-min-header">NewsLetter</h3>
+                    <p class="mini-paragraph">
+                        Subscribe to our weekly Newslatter and receive updates via email.
+                    </p>
+
+                    <section class="subscribe-newsletter">
+                        <form action="" class="newsletter-form">
+
+                            <div class="footer-mail-input-cover">
+                                <input name="letter-mail" type="text" placeholder="Enter your mail here...">
+                                <button type="button">GO</button>
+                            </div><!-- div.footer-mail-input-cover -->
+
+                        </form><!-- form.newsletter-form -->
+                    </section><!-- section.subscribe-newsletter -->
+                </div><!-- div.news-letter -->
+            </div><!-- div.right-footer -->
+
+        </section><!--section.footer -->
+
+        <footer>
+            <div class="copyright-text-cover hide-developer">
+                <p class="copyright-text"> &copy; ANCIENT PATH EVANGELICAL MINISTRY, ALL RIGHTS RESERVED.
+                    <button class="show-more-footer">
+                        <span class="show-dev-icon"> <i class="fa fa-angle-down"></i></span>
+                        <span class="hide-dev-icon"> <i class="fa fa-angle-up"></i></span>
+                    </button>
+                </p>
+                <div class="dev-contact-cover">
+                    <p class="developer-contact">Powered by <a class="dev-link"
+                            href="https://wa.me/+2348104465980">zayonSoft</a> </p>
+                </div>
+
+            </div><!-- div.copyright-text -->
+
+            <div class="terms-section">
+                <li> <a href="#">Terms & Conditions</a></li>
+                <li> <a href="#">Privacy Policy</a></li>
+            </div><!-- div.terms-section -->
+        </footer>
+
+    </div><!-- div.overall -->
+
+    <script src="{% static 'index_page/nav.js' %}"></script>
+    <script src="{% static 'index_page/donate.js' %}"></script>
+    <script src="{% static 'index_page/get_accounts.js' %}"></script>
+    <script src="{% static 'index_page/get_sermons.js' %}"></script>
+    <script src="{% static 'index_page/footer_script.js' %}"></script>
+    <script src="{% static 'error_specification.js' %}" defer></script>
+    <script src="{% static 'jquery.js' %}"></script>
+</body>
+
+</html>
