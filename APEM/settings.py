@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'apemapp.middleware.RefreshSessionMiddleware',
 ]
 
 ROOT_URLCONF = 'APEM.urls'

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from apemapp.decorators import authenticated_user ,unauthenticated_user, admins_only
 
-from django.contrib import auth
+from django.contrib import auth as login_auth
 
 # Create your views here.
 
@@ -10,7 +10,6 @@ def landing(request):
 
 
 @unauthenticated_user
-@admins_only
 def auth(request):
     return render(request, "auth/auth.html")
 
@@ -33,5 +32,5 @@ def accounts(request):
 
 
 def logout(request):
-    auth.logout(request)
+    login_auth.logout(request)
     return redirect("auth")
