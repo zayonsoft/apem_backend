@@ -1,0 +1,228 @@
+:root {
+    --left-contact-pading: 160px;
+    --page-transition: 0.5s ease;
+}
+
+
+section.contact {
+    /* background-color: #334b35; */
+    background-color: #611b1b;
+    padding-left: var(--left-contact-pading);
+    padding-right: var(--left-contact-pading);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    gap: 70px;
+    grid-template-columns: 1fr 1fr;
+    /* min-height: 100vh; */
+    align-content: center;
+    box-sizing: border-box;
+
+}
+
+div.contact-details {
+    display: grid;
+    gap: 20px;
+}
+
+.contact-details .mini-header2 {
+    text-align: left;
+}
+
+div.contact-us-header-cover {
+    display: grid;
+    gap: 10px;
+}
+
+.mini-header2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: rgb(233, 233, 233);
+}
+
+.mini-header2 p {
+    font-size: 0.75rem;
+}
+
+.main-header {
+    font-stretch: extra-expanded;
+    display: grid;
+    gap: 15px;
+}
+
+.main-header-text {
+    font-family: system-ui;
+    color: #f7f7f7;
+    font-size: 1.85rem;
+}
+
+.mini-paragraph {
+    font-family: system-ui;
+    font-size: 0.85rem;
+    color: #c9c9c9;
+    max-width: 100%;
+}
+
+div.contact-info {
+    display: grid;
+    font-family: system-ui;
+    gap: 5px;
+}
+
+.info-title {
+    font-size: 0.73rem;
+    color: rgb(173, 173, 173);
+}
+
+.phone-number-list {
+    display: grid;
+    gap: 2px;
+    color: rgb(211, 211, 211);
+    list-style-type: none;
+    font-size: 0.9rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contact-detail {
+    font-size: 0.9rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(211, 211, 211);
+}
+
+.flex-content {
+    display: flex;
+    gap: 6px;
+    align-content: center;
+    list-style-type: none;
+}
+
+.social-link {
+    color: aliceblue;
+    transition: 0.5s ease;
+    padding: 5px;
+    display: block;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+}
+
+.social-link:hover {
+    background-color: rgb(255, 242, 219);
+}
+
+.color-blue:hover {
+    color: blue;
+}
+
+.color-black:hover {
+    color: black;
+}
+
+.color-red:hover {
+    color: darkred;
+}
+
+.color-purple:hover {
+    color: rgb(66, 12, 71);
+}
+
+
+div.contact-form-cover {
+    display: grid;
+    gap: 5px;
+    align-content: start;
+}
+
+form.contact-form {
+    display: grid;
+    gap: 25px;
+    max-width: 450px;
+    /* margin: auto; */
+}
+
+.contact-input-cover input,
+.contact-input-cover textarea {
+    border-radius: 5px;
+    background-color: rgb(129, 48, 48);
+    padding: 15px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    color: rgb(221, 212, 196);
+}
+
+.contact-input-cover textarea {
+    height: 18vh;
+    resize: none;
+}
+
+.contact-input-cover input::placeholder,
+.contact-input-cover textarea::placeholder {
+    font-family: system-ui;
+    color: rgb(194, 194, 194);
+    font-size: 0.7rem;
+}
+
+.submit-contact-form-btn {
+    text-decoration: none;
+    background-color: rgb(247, 195, 95);
+    background-color: whitesmoke;
+    padding: 15px 35px;
+    color: #141414;
+    font-family: system-ui;
+    border-radius: 13px;
+    font-weight: 650;
+    font-size: 0.67rem;
+    transition: 0.5s ease;
+    display: block;
+    border: none;
+}
+
+.submit-contact-form-btn:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+@media screen and (max-width:1200px) {
+    :root {
+        --left-pading: 60px;
+        --page-transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    :root {
+        --left-contact-pading: 40px;
+        --page-transition: 0.5s ease;
+    }
+
+}
+
+
+@media screen and (max-width: 830px) {
+    .contact-us-header-cover .main-header-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:820px) {
+    :root {
+        --left-contact-pading: 25px;
+        --page-transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width:751px) {
+    :root {
+        --left-contact-pading: 20px;
+        --page-transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    section.contact {
+        grid-template-columns: 1fr;
+
+    }
+}

@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --side-padding: 50px;
+}
+
+section.landing {
+    background: linear-gradient(rgba(22, 20, 20, 0.9) 0%, rgba(31, 20, 20, 0.9) 20%, rgba(39, 28, 28, 0.9) 50%, rgba(31, 19, 19, 0.9) 100%), url("../background/cross_bg1.jpg");
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    align-items: center;
+    padding: 5px;
+    padding-left: var(--side-padding);
+    background-color: rgba(70, 59, 59, 0.7);
+    justify-content: space-between;
+}
+
+.fixed-header {
+    background-color: #343869;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.fixed-header .nav-links:hover {
+    color: rgb(184, 157, 157);
+}
+
+div.logo {
+    display: flex;
+    gap: 5px;
+    font-family: system-ui;
+    align-items: center;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 70px;
+    display: block;
+}
+
+
+div.nav-links-container {
+    display: flex;
+    gap: 5px;
+    column-gap: 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: system-ui;
+    font-weight: 500;
+    transition: 0.5s ease;
+    outline: none;
+    width: max-content;
+}
+
+.fixed-header .nav-links {
+    color: #d5dfff;
+}
+
+.nav-links:hover {
+    color: #024dee;
+}
+
+div.nav-btn-cover {
+    display: none;
+}
+
+div.home-content-cover {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 52%;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    padding-left: var(--side-padding);
+    font-family: system-ui;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+p.welcome {
+    color: #ffebeb;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.welcome-text {
+    font-size: 4.0rem;
+    text-align: center;
+    line-height: 0.9;
+    color: #ffebeb;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.sub-welcome {
+    line-height: 2.5;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #e0d1d1;
+    font-weight: 500;
+}
