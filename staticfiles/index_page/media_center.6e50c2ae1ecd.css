@@ -1,0 +1,84 @@
+section.media-center {
+    min-height: 20vh;
+    padding: 5px;
+    display: grid;
+    gap: 6px;
+    align-content: flex-start;
+    font-family: system-ui;
+    position: relative;
+    background: linear-gradient(rgb(225, 225, 225, 1) 0%, rgb(225, 225, 225, 1) 20%, rgba(225, 225, 225, 1) 50%, rgba(88, 14, 14, 0.9) 50.1%, rgba(88, 14, 14, 0.9) 70%, rgba(88, 14, 14, 1) 100%), url("../background/bible_open.6eaf0d85f020.jpg");
+    background-position-y: center;
+    background-size: cover;
+    padding: 35px 10px;
+}
+
+
+.media-center .header-box {
+    display: grid;
+    align-content: center;
+}
+
+.media-center .section-header {
+    color: rgb(15, 30, 104);
+}
+
+.media-cover-container {
+    width: 95%;
+    max-width: 900px;
+    min-height: 35vh;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+    align-content: start;
+}
+
+.media-cover {
+    padding: 10px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 250px));
+    gap: 15px;
+    justify-content: center;
+}
+
+.each-picture {
+    padding: 7px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px grey;
+    justify-self: center;
+    align-self: flex-start;
+}
+
+
+.media-img {
+    max-width: 100%;
+    border-radius: 3px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    max-height: 200px;
+}
+
+.view-more-btn {
+    justify-self: center;
+    background-color: whitesmoke;
+    padding: 10px;
+    color: #970808;
+    font-weight: 600;
+    font-family: system-ui;
+    text-decoration: none;
+    transition: 0.5s ease;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.view-more-btn:hover {
+    background-color: rgb(206, 214, 224);
+}
+
+.view-more-btn i {
+    font-size: 0.7rem;
+}

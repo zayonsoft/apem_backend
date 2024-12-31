@@ -1,0 +1,128 @@
+@media screen and (max-width:860px) {
+    :root {
+        --side-padding: 35px;
+    }
+
+    .welcome-text {
+        font-size: 2.9rem;
+    }
+
+    .sub-welcome {
+        font-size: 1rem;
+
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    p.welcome {
+        font-size: 1rem;
+    }
+
+    .welcome-text {
+        font-size: 2.6rem;
+    }
+
+    .sub-welcome {
+        font-size: 1.2rem;
+
+    }
+}
+
+@media screen and (min-width:601px) {
+    div.nav-links-cover {
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+        padding-right: 5px;
+        padding-left: 5px;
+        grid-template-areas:
+            "logo navbtn"
+            "navlinks navlinks"
+        ;
+        position: absolute;
+        z-index: 2;
+        padding: 0px;
+        background-color: rgba(145, 129, 127, 0.95);
+    }
+
+    div.logo {
+        grid-area: logo;
+        padding: 5px;
+        padding-left: 20px;
+    }
+
+    div.nav-links-cover {
+        grid-area: navlinks;
+        transition: 0.5s ease;
+        height: 0;
+        overflow-y: hidden;
+        background: rgba(122, 109, 109, 0.3);
+    }
+
+    div.nav-links-container {
+        display: grid;
+        justify-content: unset;
+    }
+
+    .nav-links {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 1px black;
+    }
+
+    .nav-links:hover {
+        background-color: whitesmoke;
+    }
+
+    .fixed-header .nav-links:hover {
+        background-color: whitesmoke;
+        color: #343869;
+    }
+
+    div.nav-btn-cover {
+        display: block;
+        grid-area: navbtn;
+        justify-self: flex-end;
+        padding-right: 20px;
+    }
+
+    button.nav-btn {
+        border: none;
+        display: block;
+        padding: 5px;
+        height: 30px;
+        width: 30px;
+        border-radius: 3px;
+        color: #961313;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+
+    button.nav-btn:hover {
+        background-color: #c22828;
+        color: aliceblue;
+    }
+
+    .closed-nav .closed-bar {
+        display: inline;
+    }
+
+    .closed-nav .opened-bar {
+        display: none;
+    }
+
+    .opened-nav .closed-bar {
+        display: none;
+    }
+
+    .opened-nav .opened-bar {
+        display: inline;
+    }
+
+}

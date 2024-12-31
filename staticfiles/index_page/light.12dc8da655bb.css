@@ -1,0 +1,15 @@
+section.light {
+    min-height: 40vh;
+    background: linear-gradient(rgba(88, 14, 14, 1) 0%, rgba(88, 14, 14, 0.8) 20%, rgba(71, 31, 31, 0.7) 50%, rgba(88, 14, 14, 0.5) 100%), url("../background/fire_lamps.dddae6192394.jpg");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-content: center;
+}
+
+
+div.light-text-cover {
+    text-align: center;
+    color: white;
+    font-family: cursive;
+}

@@ -1,0 +1,109 @@
+section.services {
+    position: relative;
+    padding: 15px;
+    background-color: #d4d4d4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-position: center;
+    gap: 10px;
+    background-color: #611b1b;
+    padding-left: var(--left-contact-pading);
+    padding-right: var(--left-contact-pading);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* .sub-section inside donation.css */
+
+.left-service {
+    width: 90%;
+    display: grid;
+    gap: 25px;
+    align-self: flex-start;
+    position: sticky;
+    top: 0%;
+}
+
+.service-header {
+    text-align: left;
+    font-weight: 500;
+    color: whitesmoke;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.bigger-para {
+    font-size: 0.95rem;
+}
+
+.emphasize {
+    font-weight: 500;
+    font-style: oblique;
+}
+
+.service-sub-header-text {
+    color: rgb(236, 226, 226);
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+.right-service {
+    display: grid;
+    gap: 25px;
+}
+
+.right-service .service-header {
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    justify-content: center;
+}
+
+.each-service {
+    background-color: #e4e4e4;
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+    border-radius: 5px;
+    min-height: 130px;
+    width: 230px;
+    max-width: 95%;
+    justify-self: center;
+    box-sizing: border-box;
+}
+
+.service-name {
+    color: rgb(15, 30, 104);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.service-desc {
+    display: grid;
+    gap: 10px;
+}
+
+.each-desc {
+    color: #1c2235;
+    font-size: 0.9rem;
+}
+
+.detail-icon {
+    color: #a30404;
+}
+
+@media screen and (max-width: 600px) {
+    section.services {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .left-service {
+        position: unset;
+    }
+
+}

@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.behind-container {
+    background: url("../logo/apem_logo.9de027a3b067.png");
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(117, 117, 117, 0.8);
+}
+
+.form-cover {
+    background: rgba(243, 243, 243, 0.9);
+    width: 90%;
+    max-width: 350px;
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    font-family: system-ui;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+}
+
+.login-form {
+    text-align: center;
+    display: grid;
+    gap: 20px;
+}
+
+.title {
+    font-style: italic;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: rgb(0, 16, 156);
+}
+
+.inputs-cover {
+    display: grid;
+    gap: 15px;
+}
+
+.each-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: rgb(49, 52, 73);
+    box-shadow: 0px 0px 2px grey;
+}
+
+.each-input .icon {
+    color: rgb(240, 240, 240);
+    padding: 0px 10px;
+    font-size: 0.9rem;
+}
+
+.each-input .input {
+    flex: 1;
+}
+
+.input input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: whitesmoke;
+}
+
+.input input::placeholder {
+    font-family: system-ui;
+}
+
+.login-btn {
+    height: 40px;
+    padding: 4px;
+    box-sizing: border-box;
+    border: none;
+    background: rgb(0, 16, 156);
+    color: whitesmoke;
+    font-family: system-ui;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.login-btn:hover {
+    background: rgb(8, 17, 97);
+}
+
+.processing {
+    background: rgb(83, 87, 117);
+}
+
+.processing:hover {
+    background: rgb(83, 87, 117);
+}
+
+.error-display {
+    text-align: center;
+    font-weight: 500;
+    color: red;
+}
+
+.success-display {
+    text-align: center;
+    font-weight: 500;
+    color: darkgreen;
+}
