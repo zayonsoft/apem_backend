@@ -55,7 +55,7 @@
                         <a class="each-category-link" href="#">
                             <span class="category-text">Home</span>
                             <span class="category-icon">
-                                <i class="fa fa-list"></i>
+                                <i class="fa fa-home"></i>
                             </span>
                         </a>
                     </li>
@@ -72,7 +72,16 @@
                         <a class="each-category-link" href="{% url 'accounts' %}">
                             <span class="category-text">Accounts</span>
                             <span class="category-icon">
-                                <i class="fa fa-list"></i>
+                                <i class="fa fa-bank"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="each-category-link" href="{% url 'password' %}">
+                            <span class="category-text">Password</span>
+                            <span class="category-icon">
+                                <i class="fa fa-key"></i>
                             </span>
                         </a>
                     </li>
@@ -94,11 +103,14 @@
         </aside>
 
         <footer>
-            <p class="footer-text">&copy; APEM DEV TEAM 2024</p>
+            <p class="footer-text">&copy; APEM DEV TEAM, <span class="insert-date">
+                </span>.
+            </p>
         </footer>
     </div><!-- div.page-cover -->
 
     <script src="{% static 'staff/nav_script.js' %}"></script>
+    <script src="{% static 'index_page/auto_date.js' %}"></script>
     <script src="{% static 'jquery.js' %}"></script>
 </body>
 

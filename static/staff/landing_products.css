@@ -318,7 +318,7 @@ footer {
     right: 0;
     height: calc(var(--footer-height) - var(--element-gap));
     background-color: var(--primary-color);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: system-ui;
     display: grid;
     align-items: center;
     z-index: 1;
@@ -326,6 +326,7 @@ footer {
 
 .footer-text {
     text-align: center;
-    color: #252525;
-    font-size: 0.9rem;
+    color: #353535;
+    font-size: 0.85rem;
+    font-weight: bold;
 }

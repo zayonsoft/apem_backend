@@ -274,6 +274,7 @@ def createSermon(request):
     return JsonResponse(data)
 
 
+@async_authenticated_user
 def editSermon(request):
     data = {"message":"Unable to Handle This Request!", "success":False}
     if request.method == "POST":
@@ -322,6 +323,7 @@ def editSermon(request):
     return JsonResponse(data)
     
     
+@async_authenticated_user
 def deleteSermon(request):
     data = {"message":"Unable to Handle This Request!", "success":False}
     if request.method == "POST":
@@ -341,3 +343,42 @@ def deleteSermon(request):
         return JsonResponse(data)
         
     return JsonResponse(data)
+
+
+@async_authenticated_user
+def changePassword(request):
+    data = {"message":"Cannot Handle this Request at the Moment", "success":False, "refresh":False}
+    if request.method == "POST":
+        fmr_password = request.POST.get("fmr_password")
+        new_password = request.POST.get("new_password")
+        confirm_password = request.POST.get("confirm_new_password")
+        user = request.user
+        
+        user = User.objects.get(id = user.id)
+        
+        if not user.check_password(fmr_password):
+            data = {"message": "Former Password is Incorrect", "success":False}
+            return JsonResponse(data)
+        
+        if not (new_password and new_password.strip()):
+            data = {"message": "Password Cannot Be Empty", "success":False}
+            return JsonResponse(data)
+        
+        if not ( len(new_password.strip()) >= 4 ):
+            data = {"message": "Password Too Short! Must be at least 4 Characters", "success":False}
+            return JsonResponse(data)
+            
+        if not (new_password == confirm_password):
+            data = {"message": "Passwords Don't Match", "success":False}
+            return JsonResponse(data)
+         
+        
+        
+        user.set_password(new_password)
+        user.save()
+        data = {"message": "Password Updated!", "success":True}
+        return JsonResponse(data)
+        
+        
+    return JsonResponse(data)
+    

@@ -7,6 +7,9 @@ urlpatterns = [
     path("staff", views.auth, name = "auth"),
     path("login", views2.postLogin, name = "login"),
     
+    path("password", views.password, name = "password"),
+    path("change_password", views2.changePassword, name = "change_password"),
+    
     path("logout", views.logout, name = "logout"),
     
     path("accounts", views.accounts, name = "accounts"),

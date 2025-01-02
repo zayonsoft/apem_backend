@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from apemapp.decorators import authenticated_user ,unauthenticated_user, admins_only
+from django.contrib.auth.models import User
 
 from django.contrib import auth as login_auth
 
@@ -34,3 +35,7 @@ def accounts(request):
 def logout(request):
     login_auth.logout(request)
     return redirect("auth")
+
+@authenticated_user
+def password(request):
+    return render(request, "components/password.html")

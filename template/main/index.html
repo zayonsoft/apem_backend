@@ -669,7 +669,9 @@
 
         <footer>
             <div class="copyright-text-cover hide-developer">
-                <p class="copyright-text"> &copy; ANCIENT PATH EVANGELICAL MINISTRY, ALL RIGHTS RESERVED.
+                <p class="copyright-text"> &copy; ANCIENT PATH EVANGELICAL MINISTRY,
+                    <span class="insert-date"></span>,
+                    ALL RIGHTS RESERVED.
                     <button class="show-more-footer">
                         <span class="show-dev-icon"> <i class="fa fa-angle-down"></i></span>
                         <span class="hide-dev-icon"> <i class="fa fa-angle-up"></i></span>
@@ -677,7 +679,8 @@
                 </p>
                 <div class="dev-contact-cover">
                     <p class="developer-contact">Powered by <a class="dev-link"
-                            href="https://wa.me/+2348104465980">zayonSoft</a> </p>
+                            href="https://wa.me/+2348104465980">zayonSoft</a>, <span class="insert-date">
+                        </span>.</p>
                 </div>
 
             </div><!-- div.copyright-text -->
@@ -695,6 +698,7 @@
     <script src="{% static 'index_page/get_accounts.js' %}"></script>
     <script src="{% static 'index_page/get_sermons.js' %}"></script>
     <script src="{% static 'index_page/footer_script.js' %}"></script>
+    <script src="{% static 'index_page/auto_date.js' %}"></script>
     <script src="{% static 'error_specification.js' %}" defer></script>
     <script src="{% static 'jquery.js' %}"></script>
 </body>
