@@ -34,6 +34,20 @@ def postLogin(request):
         username_or_mail = request.POST.get("id_or_email")
         password = request.POST.get("password")
         
+        if not (username_or_mail and username_or_mail.strip()):
+            data={
+                "message":"Enter a Valid Username or Email", "success":False,"next_url":"",
+            }
+            return JsonResponse(data)
+            
+        if not (password):
+            data={
+                "message":"Password is Required", "success":False,"next_url":"",
+            }
+            return JsonResponse(data)
+        
+        username_or_mail = username_or_mail.strip() 
+    
         #if no username or email matches
         if not confirmUserDetail(username_or_mail):
             data={
@@ -352,7 +366,6 @@ def changePassword(request):
         fmr_password = request.POST.get("fmr_password")
         new_password = request.POST.get("new_password")
         confirm_password = request.POST.get("confirm_new_password")
-        user = request.user
         
         user = User.objects.get(id = user.id)
         
@@ -382,3 +395,47 @@ def changePassword(request):
         
     return JsonResponse(data)
     
+    
+@async_authenticated_user
+def updateProfile(request):
+    data = {"message":"Cannot Handle this Request at the Moment", "success":False, "refresh":False}
+    if request.method == "POST":
+        email = request.POST.get("email")
+        firstname = request.POST.get("first_name")
+        lastname = request.POST.get("last_name")
+        
+        user = User.objects.get(id = user.id)
+        
+        if not (email and email.strip()):
+            data = {"message":"Enter an Email", "success":False }
+            return JsonResponse(data)
+        
+        if not (firstname and firstname.strip()):
+            data = {"message":"Enter Your Firstname", "success":False }
+            return JsonResponse(data)
+        
+        if not (lastname and lastname.strip()):
+            data = {"message":"Enter Your Firstname", "success":False }
+            return JsonResponse(data)
+        
+        email = email.strip()
+        firstname = firstname.strip()
+        lastname = lastname.strip()
+        
+        if User.objects.filter(email = email).exclude(id = user.id).exists():
+            data = {"message":"Email is Already in Use", "success":False }
+            return JsonResponse(data)
+        
+        if user.email == email and user.first_name == firstname and user.last_name == lastname:
+            data = {"message":"No Changes Made", "success":False }
+            return JsonResponse(data)
+              
+        user.email = email
+        user.first_name = firstname
+        user.last_name = lastname
+        
+        user.save()
+        data = {"message":"Profile Updated Successfully", "success":True }
+        return JsonResponse(data)
+        
+    return JsonResponse(data)
