@@ -32,9 +32,15 @@ def accounts(request):
     return render(request, "components/accounts.html")
 
 
+@authenticated_user
+def profile(request):
+    return render(request, "components/profile.html") 
+
+
 def logout(request):
     login_auth.logout(request)
     return redirect("auth")
+
 
 @authenticated_user
 def password(request):

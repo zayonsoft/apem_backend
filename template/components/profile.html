@@ -95,22 +95,23 @@
         <span class="title">Update Profile</span>
 
     </div>
-    <form action="{% url 'change_password' %}" class="update-profile">
+    <input type="hidden" name="get_profile_url" value="{% url 'get_profile' %}">
+    <form action="{% url 'update_profile' %}" class="update-profile">
         {% csrf_token %}
         <div class="inputs-cover">
             <div class="each-input">
                 <label for="email">Email:</label>
-                <input name="email" id="email" type="text" placeholder="Email">
+                <input name="email" id="email" type="text" placeholder="Email" value="...">
             </div>
 
             <div class="each-input">
                 <label for="first_name">First Name:</label>
-                <input name="first_name" id="first_name" type="text" placeholder="First Name">
+                <input name="first_name" id="first_name" type="text" placeholder="First Name" value="...">
             </div>
 
             <div class="each-input">
                 <label for="last_name">Last Name:</label>
-                <input name="last_name" id="last_name" type="text" placeholder="Last Name">
+                <input name="last_name" id="last_name" type="text" placeholder="Last Name" value="...">
             </div>
 
 
@@ -123,5 +124,6 @@
 {% include 'popups/success_message.html' %}
 
 
+<script src="{% static 'components/profile/update_profile.js' %}"></script>
 <script src="{% static 'error_specification.js' %}" defer></script>
 {% endblock %}

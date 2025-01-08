@@ -10,6 +10,10 @@ urlpatterns = [
     path("password", views.password, name = "password"),
     path("change_password", views2.changePassword, name = "change_password"),
     
+    path("get_profile", views2.getProfileDetails, name = "get_profile"),
+    path("profile", views.profile, name = "profile"),
+    path("update_profile", views2.updateProfile, name = "update_profile"),
+    
     path("logout", views.logout, name = "logout"),
     
     path("accounts", views.accounts, name = "accounts"),

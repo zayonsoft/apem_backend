@@ -367,7 +367,8 @@ def changePassword(request):
         new_password = request.POST.get("new_password")
         confirm_password = request.POST.get("confirm_new_password")
         
-        user = User.objects.get(id = user.id)
+        current_user = request.user
+        user = User.objects.get(id = current_user.id)
         
         if not user.check_password(fmr_password):
             data = {"message": "Former Password is Incorrect", "success":False}
@@ -394,6 +395,23 @@ def changePassword(request):
         
         
     return JsonResponse(data)
+
+
+@async_authenticated_user
+def getProfileDetails(request):
+        current_user = request.user
+        user = User.objects.get(id = current_user.id)
+        
+        profile_details = {
+            "username":user.username,
+            "email":user.email,
+            "first_name":user.first_name,
+            "last_name":user.last_name,
+        }
+        
+        data = {"message":"Successful", "success":True, "details":profile_details}
+        return JsonResponse(data)
+        
     
     
 @async_authenticated_user
@@ -404,7 +422,8 @@ def updateProfile(request):
         firstname = request.POST.get("first_name")
         lastname = request.POST.get("last_name")
         
-        user = User.objects.get(id = user.id)
+        current_user = request.user
+        user = User.objects.get(id = current_user.id)
         
         if not (email and email.strip()):
             data = {"message":"Enter an Email", "success":False }
